@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BlackMapper">
+    <select id="selectBlack" resultType="Black">
+        select * from black where id = #{id};
+    </select>
+    <select id="allUser" resultType="Black">
+        select * from black;
+    </select>
+    <delete id="delete">
+        delete from black where id = #{id};
+    </delete>
+    <insert id="addBlack">
+        insert into black (name,id) values (#{name},#{id});
+    </insert>
+</mapper>

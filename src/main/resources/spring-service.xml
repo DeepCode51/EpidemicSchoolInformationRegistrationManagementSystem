@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描包-->
+    <context:component-scan base-package="service"/>
+
+    <bean id="StudentServiceImpl" class="service.StudentServiceImpl">
+        <property name="studentMapper" ref="studentMapper"/>
+    </bean>
+    <bean id="TeacherServiceImpl" class="service.TeacherServiceImpl">
+        <property name="teacherMapper" ref="teacherMapper"/>
+    </bean>
+    <bean id="StrangerServiceImpl" class="service.StrangerServiceImpl">
+        <property name="strangerMapper" ref="strangerMapper"/>
+    </bean>
+    <bean id="BlackServiceImpl" class="service.BlackServiceImpl">
+        <property name="blackMapper" ref="blackMapper"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>

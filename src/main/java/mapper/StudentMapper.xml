@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.StudentMapper">
+    <insert id="AddStudentMessage">
+        insert into student (stu_name,stu_class,stu_num,stu_fudao,stu_phone,stu_vech)
+         values (#{stu_name},#{stu_class},#{stu_num},#{stu_fudao},#{stu_phone},#{stu_vech});
+    </insert>
+    <delete id="DeleteStudent">
+        delete from student where stu_name = #{name}
+    </delete>
+    <select id="allStudent" resultType="Student">
+        select * from student;
+    </select>
+    <select id="selectStudent" resultType="Student">
+        select * from student where stu_num = #{stu_num};
+    </select>
+</mapper>

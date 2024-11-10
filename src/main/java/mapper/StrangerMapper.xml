@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.StrangerMapper">
+    <insert id="AddStranger" parameterType="Stranger">
+        insert into stranger (str_name,str_id,str_phone,str_state,str_vech)
+         values (#{str_name},#{str_id},#{str_phone},#{str_state},#{str_vech});
+    </insert>
+    <delete id="DeleteStranger">
+        delete from stranger where str_name = #{name}
+    </delete>
+    <select id="allStranger" resultType="Stranger">
+        select * from stranger;
+    </select>
+    <select id="selectStranger" resultType="Stranger">
+        select * from stranger where str_id = #{str_id};
+    </select>
+</mapper>
